@@ -5,7 +5,7 @@ import plotly.express as px
 import pandas as pd 
 from datetime import datetime as dt
 
-df_Paraguay = pd.read_excel('src/data/Paraguay RT.xlsx')
+df_Paraguay = pd.read_excel('C:/Users/Toto/Desktop/Paraguay/src/data/Paraguay RT.xlsx')
 df_Paraguay = df_Paraguay.fillna(0)
 df_Paraguay['Month'] = pd.DatetimeIndex(df_Paraguay['Date']).month
 df_Paraguay['Year'] = pd.DatetimeIndex(df_Paraguay['Date']).year 
@@ -15,7 +15,7 @@ df_Paraguay['Quarter'].mask(df_Paraguay['Month'] == 9,df_Paraguay['Year'].astype
 df_Paraguay['Quarter'].mask(df_Paraguay['Month'] == 6,df_Paraguay['Year'].astype(str) + '-' + 'Q2', inplace=True)
 df_Paraguay['Quarter'].mask(df_Paraguay['Month'] == 3,df_Paraguay['Year'].astype(str) + '-' + 'Q1', inplace=True) 
 
-df_FinMotion = pd.read_csv('src/data/FinMotionParaguay.csv')
+df_FinMotion = pd.read_csv('C:/Users/Toto/Desktop/Paraguay/src/data/FinMotionParaguay.csv')
 df_FinMotion.drop(columns=df_FinMotion.columns[0], axis=1, inplace=True)
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP], 
