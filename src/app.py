@@ -1,3 +1,4 @@
+import pathlib 
 from dash import Dash, dcc, html
 from dash.dependencies import Output, Input
 import dash_bootstrap_components as dbc 
@@ -5,7 +6,7 @@ import plotly.express as px
 import pandas as pd 
 from datetime import datetime as dt
 
-df_Paraguay = pd.read_excel('C:/Users/Toto/Desktop/Paraguay/src/data/Paraguay RT.xlsx')
+df_Paraguay = pd.read_csv('C:/Users/Toto/Desktop/Paraguay/src/data/Paraguay RT.csv')
 df_Paraguay = df_Paraguay.fillna(0)
 df_Paraguay['Month'] = pd.DatetimeIndex(df_Paraguay['Date']).month
 df_Paraguay['Year'] = pd.DatetimeIndex(df_Paraguay['Date']).year 
